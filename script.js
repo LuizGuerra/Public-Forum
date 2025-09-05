@@ -1,131 +1,100 @@
-(() => {
-  const paragraphs = Array.from(document.querySelectorAll('.paragraph'));
-  const commentsTitle = document.getElementById('comments-title');
-  const commentsList = document.getElementById('comments-list');
-  const commentForm = document.getElementById('comment-form');
-  const commentInput = document.getElementById('comment-input');
-  const submitButton = document.getElementById('submit-comment');
+// Configure your GitHub repo for Utterances here: "owner/repo"
+// 1) Create a public repo and enable Issues
+// 2) Install Utterances app to that repo: https://utteranc.es/
+// 3) Set the value below to your repo in the form "owner/repo"
+const UTTERANCES_REPO = "LuizGuerra/Public-Forum";
 
-  let selectedIndex = null;
-  const badgeMap = new Map();
+// Optionally set a default label applied to created/found issues
+const UTTERANCES_LABEL_BASE = "paragraph"; // results in labels like "paragraph" or "paragraph-3"
 
-  const STORAGE_KEY = 'commentsByParagraph:v1';
-  const loadState = () => {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    } catch (_) {
-      return {};
-    }
-  };
-  const saveState = (state) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    } catch (_) {
-      // ignore persistence errors
-    }
-  };
+// Choose an utterances theme; can be switched based on prefers-color-scheme
+function currentUtterancesTheme() {
+  const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return dark ? 'github-dark' : 'github-light';
+}
 
-  const state = loadState(); // { [index: string]: Array<{ text: string, ts: number }> }
-
-  function formatDate(ts) {
-    try {
-      const d = new Date(ts);
-      return d.toLocaleString();
-    } catch (_) {
-      return '' + ts;
-    }
+// Inject or move an utterances widget into the target container with a unique issue-term per paragraph.
+function loadCommentsForParagraph(paragraphNumber, slotEl) {
+  if (!UTTERANCES_REPO || UTTERANCES_REPO === "owner/repo") {
+    console.warn("Utterances repo not configured. Set UTTERANCES_REPO in script.js");
   }
 
-  function keyFor(index) {
-    return String(index);
-  }
+  // Clear any prior widget inside this slot
+  while (slotEl.firstChild) slotEl.removeChild(slotEl.firstChild);
 
-  function updateCountBadges() {
-    paragraphs.forEach((p, i) => {
-      const badge = badgeMap.get(i);
-      if (!badge) return;
-      const count = (state[keyFor(i)] || []).length;
-      if (count > 0) {
-        badge.textContent = String(count);
-        badge.hidden = false;
-      } else {
-        badge.textContent = '';
-        badge.hidden = true;
+  // Build a unique term that clearly includes the paragraph number
+  // This becomes the search term for the GitHub issue; Utterances will create/find an issue
+  // whose title contains this term.
+  const issueTerm = `Paragraph #${paragraphNumber} – Research Manifesto`;
+
+  // Create a close button to hide the comments if desired
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'close-comments-btn';
+  closeBtn.type = 'button';
+  closeBtn.textContent = 'Hide comments';
+  closeBtn.addEventListener('click', () => {
+    while (slotEl.firstChild) slotEl.removeChild(slotEl.firstChild);
+  });
+  slotEl.appendChild(closeBtn);
+
+  // Create the utterances script tag with the proper configuration
+  const s = document.createElement('script');
+  s.src = 'https://utteranc.es/client.js';
+  s.setAttribute('repo', UTTERANCES_REPO);
+  s.setAttribute('issue-term', issueTerm);
+  // Add a label indicating the paragraph number explicitly
+  s.setAttribute('label', `${UTTERANCES_LABEL_BASE}-${paragraphNumber}`);
+  s.setAttribute('theme', currentUtterancesTheme());
+  s.crossOrigin = 'anonymous';
+  s.async = true;
+  slotEl.appendChild(s);
+}
+
+    // <script src="https://utteranc.es/client.js"
+    //     repo="LuizGuerra/Public-Forum"
+    //     issue-term="pathname"
+    //     theme="github-light"
+    //     crossorigin="anonymous"
+    //     async>
+    // </script>
+  
+function setupDiscussButtons() {
+  document.querySelectorAll('.paragraph').forEach(section => {
+    const n = section.getAttribute('data-paragraph');
+    const btn = section.querySelector('.discuss-btn');
+    const slot = section.querySelector('.comments-slot');
+    if (!btn || !slot) return;
+
+    btn.addEventListener('click', () => {
+      loadCommentsForParagraph(n, slot);
+      // Scroll the comments into view for better UX
+      slot.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+// Update theme on the fly if system theme changes
+function watchThemeChanges() {
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  if (!mql || !mql.addEventListener) return;
+  mql.addEventListener('change', () => {
+    // For simplicity, re-render any visible widgets to pick up new theme
+    document.querySelectorAll('.comments-slot').forEach(slot => {
+      const iframe = slot.querySelector('iframe.utterances-frame');
+      if (iframe) {
+        // Try to infer the paragraph number from the containing section
+        const section = slot.closest('.paragraph');
+        if (section) {
+          const n = section.getAttribute('data-paragraph');
+          loadCommentsForParagraph(n, slot);
+        }
       }
     });
-  }
-
-  function setSelected(index) {
-    selectedIndex = index;
-    paragraphs.forEach((p, i) => {
-      p.classList.toggle('selected', i === index);
-    });
-    commentsTitle.textContent = `Comments for Paragraph ${index + 1}`;
-    commentInput.disabled = false;
-    submitButton.disabled = false;
-    renderComments();
-    updateCountBadges();
-    commentInput.focus({ preventScroll: true });
-  }
-
-  function renderComments() {
-    const comments = state[keyFor(selectedIndex)] || [];
-    commentsList.innerHTML = '';
-
-    if (!comments.length) {
-      const empty = document.createElement('div');
-      empty.className = 'comment-item';
-      empty.textContent = 'No comments yet. Be the first!';
-      commentsList.appendChild(empty);
-      return;
-    }
-
-    comments.forEach((c) => {
-      const item = document.createElement('div');
-      item.className = 'comment-item';
-
-      const meta = document.createElement('div');
-      meta.className = 'comment-meta';
-      meta.textContent = `Posted ${formatDate(c.ts)}`;
-
-      const text = document.createElement('div');
-      text.className = 'comment-text';
-      text.textContent = c.text;
-
-      item.appendChild(meta);
-      item.appendChild(text);
-      commentsList.appendChild(item);
-    });
-  }
-
-  paragraphs.forEach((p, i) => {
-    // Add count badge elements
-    const badge = document.createElement('span');
-    badge.className = 'comment-count-badge';
-    badge.setAttribute('aria-label', 'Comment count');
-    badge.hidden = true;
-    p.appendChild(badge);
-    badgeMap.set(i, badge);
-
-    p.addEventListener('click', () => setSelected(i));
   });
+}
 
-  commentForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (selectedIndex == null) return;
-    const text = commentInput.value.trim();
-    if (!text) return;
+document.addEventListener('DOMContentLoaded', () => {
+  setupDiscussButtons();
+  watchThemeChanges();
+});
 
-    const k = keyFor(selectedIndex);
-    if (!state[k]) state[k] = [];
-    state[k].push({ text, ts: Date.now() });
-    saveState(state);
-    commentInput.value = '';
-    renderComments();
-    updateCountBadges();
-  });
-
-  // Optional: auto-select the first paragraph for faster demo
-  updateCountBadges();
-  if (paragraphs.length) setSelected(0);
-})();

@@ -3,66 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inline Comments MVP</title>
+    <meta name="color-scheme" content="light dark" />
+    <title>Research Manifesto</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="app-header">
-      <h1>Comment On The Text</h1>
+    <header class="site-header">
+      <h1>Research Manifesto</h1>
+      <p class="tagline">Draft with interactive, paragraph-level discussions</p>
     </header>
-    <main class="app">
-      <section id="text-view" class="panel text-panel" aria-label="Document text">
-        <div class="text-wrapper">
-          <p class="paragraph" data-index="0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit. Eget aliquet nibh praesent tristique magna sit amet purus. Morbi tempus iaculis urna id volutpat lacus laoreet non. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet.
-          </p>
-          <p class="paragraph" data-index="1">
-            Ultrices gravida dictum fusce ut placerat orci nulla. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit. Erat velit scelerisque in dictum non consectetur a erat nam.
-          </p>
-          <p class="paragraph" data-index="2">
-            Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Auctor elit sed vulputate mi sit amet mauris commodo quis. Mi in nulla posuere sollicitudin aliquam ultrices. Blandit cursus risus at ultrices mi tempus imperdiet. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Odio morbi quis commodo odio aenean sed adipiscing diam donec.
-          </p>
-          <p class="paragraph" data-index="3">
-            Sit amet mauris commodo quis imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Commodo elit at imperdiet dui accumsan sit amet nulla facilisi. Purus sit amet luctus venenatis lectus magna. Amet facilisis magna etiam tempor orci eu. Id aliquet lectus proin nibh nisl condimentum id venenatis.
-          </p>
-          <p class="paragraph" data-index="4">
-            In hendrerit gravida rutrum quisque non tellus orci ac. Vitae nunc sed velit dignissim sodales ut eu sem integer. Viverra justo nec ultrices dui sapien eget mi proin sed. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Ultrices in iaculis nunc sed augue lacus viverra vitae. In pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Varius sit amet mattis vulputate enim nulla aliquet porttitor.
-          </p>
-          <p class="paragraph" data-index="5">
-            Integer feugiat scelerisque varius morbi enim nunc faucibus a. Suscipit adipiscing bibendum est ultricies integer. Tellus in metus vulputate eu scelerisque. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Dui vivamus arcu felis bibendum ut tristique et egestas. Est velit egestas dui id ornare arcu odio ut. Pharetra sit amet aliquam id diam maecenas ultricies mi.
-          </p>
-          <p class="paragraph" data-index="6">
-            Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Leo in vitae turpis massa sed elementum tempus egestas. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Id leo in vitae turpis massa sed elementum tempus.
-          </p>
-          <p class="paragraph" data-index="7">
-            Tristique senectus et netus et malesuada fames ac turpis egestas. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Consectetur adipiscing elit duis tristique sollicitudin nibh. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Enim ut sem viverra aliquet eget sit amet tellus.
-          </p>
-          <p class="paragraph" data-index="8">
-            Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Arcu risus quis varius quam quisque id diam vel quam. Dignissim convallis aenean et tortor at risus viverra. Consequat nisl vel pretium lectus quam id leo in vitae. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Elementum integer enim neque volutpat ac tincidunt vitae semper.
-          </p>
-          <p class="paragraph" data-index="9">
-            Nisi est sit amet facilisis magna etiam tempor orci. Luctus accumsan tortor posuere ac ut consequat semper viverra. Urna condimentum mattis pellentesque id nibh tortor id aliquet lectus. Egestas sed tempus urna et pharetra pharetra massa massa. Sit amet dictum sit amet justo donec enim diam. Vitae et leo duis ut diam quam nulla porttitor. Magna fermentum iaculis eu non diam phasellus vestibulum lorem sed.
-          </p>
+
+    <script src="https://utteranc.es/client.js"
+      repo="LuizGuerra/Public-Forum"
+      issue-term="pathname"
+      theme="preferred-color-scheme"
+      crossorigin="anonymous"
+      async>
+    </script>
+
+    <main class="content" id="content">
+      <!-- Ten paragraphs, each with its own Discuss button and comments slot -->
+      <section class="paragraph" id="p1" data-paragraph="1">
+        <h2>Paragraph 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #1</button>
         </div>
+        <div class="comments-slot" aria-live="polite"></div>
       </section>
 
-      <aside id="comments-view" class="panel comments-panel" aria-label="Comments panel">
-        <div class="comments-header">
-          <h2 id="comments-title">Select a paragraph to comment</h2>
+      <section class="paragraph" id="p2" data-paragraph="2">
+        <h2>Paragraph 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent. Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. Eu facilisis sed odio morbi quis commodo odio aenean.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #2</button>
         </div>
-        <div id="comments-list" class="comments-list" aria-live="polite"></div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
 
-        <form id="comment-form" class="comment-form" autocomplete="off">
-          <label for="comment-input" class="sr-only">Add a comment</label>
-          <textarea id="comment-input" placeholder="Write a comment..." rows="3" disabled></textarea>
-          <div class="form-actions">
-            <button id="submit-comment" type="submit" disabled>Add Comment</button>
-          </div>
-        </form>
-      </aside>
+      <section class="paragraph" id="p3" data-paragraph="3">
+        <h2>Paragraph 3</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet dictum sit amet justo. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #3</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p4" data-paragraph="4">
+        <h2>Paragraph 4</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Eget duis at tellus at urna condimentum mattis pellentesque id. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #4</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p5" data-paragraph="5">
+        <h2>Paragraph 5</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam viverra orci sagittis eu volutpat. Id consectetur purus ut faucibus. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #5</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p6" data-paragraph="6">
+        <h2>Paragraph 6</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Blandit cursus risus at ultrices. Turpis cursus in hac habitasse platea dictumst quisque sagittis.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #6</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p7" data-paragraph="7">
+        <h2>Paragraph 7</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet purus gravida quis blandit turpis cursus in hac. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #7</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p8" data-paragraph="8">
+        <h2>Paragraph 8</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Morbi non arcu risus quis varius quam quisque id diam.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #8</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p9" data-paragraph="9">
+        <h2>Paragraph 9</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper quis lectus nulla at volutpat diam ut venenatis. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. Morbi tristique senectus et netus et malesuada fames ac turpis.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #9</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
+
+      <section class="paragraph" id="p10" data-paragraph="10">
+        <h2>Paragraph 10</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id donec ultrices tincidunt arcu non sodales neque. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Pellentesque sit amet porttitor eget dolor morbi non arcu risus.
+        </p>
+        <div class="paragraph-actions">
+          <button class="discuss-btn" type="button">Discuss paragraph #10</button>
+        </div>
+        <div class="comments-slot" aria-live="polite"></div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>
+        Comments are powered by <a href="https://utteranc.es/" target="_blank" rel="noreferrer noopener">Utterances</a> and GitHub Issues.
+      </p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
   </html>
-
