@@ -1,4 +1,4 @@
-Research Manifesto – Paragraph Comments
+# Public Forum / Tech Debt Manifesto
 
 Simple static site that presents a Research Manifesto and adds a per‑paragraph discussion powered by Utterances (GitHub Issues). Each paragraph has its own "Discuss" button that mounts an Utterances widget tied to a unique issue term.
 
