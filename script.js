@@ -1,7 +1,4 @@
-// Configure your GitHub repo for Utterances here: "owner/repo"
-// 1) Create a public repo and enable Issues
-// 2) Install Utterances app to that repo: https://utteranc.es/
-// 3) Set the value below to your repo in the form "owner/repo"
+// Utterances repo constant for the customized generated script
 const UTTERANCES_REPO = "LuizGuerra/Public-Forum";
 
 // Optionally set a default label applied to created/found issues

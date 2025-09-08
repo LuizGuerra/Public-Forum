@@ -10,15 +10,21 @@
   <body>
     <header class="site-header">
       <h1>Research Manifesto</h1>
-      <p class="tagline">Draft with interactive, paragraph-level discussions</p>
+      <p class="tagline">Manifesto from Dagstuhl Perspectives Workshop 24452 -- Reframing Technical Debt -- <a href=https://arxiv.org/abs/2505.13009">Link to Paper</a></p>
     </header>
 
     <main class="content" id="content">
       <!-- Ten paragraphs, each with its own Discuss button and comments slot -->
       <section class="paragraph" id="p1" data-paragraph="1">
-        <h2>Paragraph 1</h2>
+        <h2>V1 - We value psychological safety and trust between technical and business stakeholders for effective Technical Debt Management.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Psychological safety<span class="footnote-number">1</span> is essential for effective Technical Debt Management as it implies that there is no risk of retribution. Instead, people can talk openly about Technical Debt and how it was introduced without concern about negative career impact. Equally important is building trust between technical and business stakeholders: they both have legitimate concerns about the software being developed, and they need to mutually understand and respect these concerns by working together to address them. Accountability translates into appointing concrete roles to manage Technical Debt instead of blaming other stakeholders.
+        </p>
+        <p>
+          <span class="footnote-number">1</span> For a canonical reference of the term, please see following.
+        </p>
+        <p class="references">
+          Amy Edmondson. Psychological safety and learning behavior in work teams. <i>Administrative Science Quarterly</i>, 44(2):350–383, 1999. URL: https://journals.sagepub.com/doi/abs/10.2307/2666999, arXiv:https://journals.sagepub.com/doi/pdf/10.2307/2666999, doi:10.2307/2666999.
         </p>
         <div class="paragraph-actions">
           <button class="discuss-btn" type="button">Discuss paragraph #1</button>
@@ -27,9 +33,9 @@
       </section>
 
       <section class="paragraph" id="p2" data-paragraph="2">
-        <h2>Paragraph 2</h2>
+        <h2>V2 - We value simple, actionable, value-based communication of Technical Debt to all stakeholders over excessive, minute, overwhelming details.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent. Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. Eu facilisis sed odio morbi quis commodo odio aenean.
+          When communicating Technical Debt information to the development team and even more so to management, clear communications and supporting information should be minimally complex and focus on actionable points. Although metrics, data, and trend plots have a role in effective Technical Debt Management, an overload of fragmented information may confuse rather than enable prioritized decision-making. Communication, especially with management, should also emphasize information that impacts business value more than any single metric or set of metrics. The key is not to over-simplify Technical Debt information, but instead to foster a practical and actionable Technical Debt Management approach that is clearly understood by developers and management.
         </p>
         <div class="paragraph-actions">
           <button class="discuss-btn" type="button">Discuss paragraph #2</button>
@@ -38,9 +44,9 @@
       </section>
 
       <section class="paragraph" id="p3" data-paragraph="3">
-        <h2>Paragraph 3</h2>
+        <h2>V3 - We value transparency, explainability, and replicability in the identification, measurement, and prioritization of Technical Debt.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet dictum sit amet justo. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel.
+          The methods by which Technical Debt is identified, measured, and prioritized should not be obscured behind complicated tooling, esoteric rules, and undisclosed data sets. Instead, Technical Debt items should be traced to specific data sources, where measurement and prioritization rules should be open and explainable to all stakeholders
         </p>
         <div class="paragraph-actions">
           <button class="discuss-btn" type="button">Discuss paragraph #3</button>
@@ -49,9 +55,9 @@
       </section>
 
       <section class="paragraph" id="p4" data-paragraph="4">
-        <h2>Paragraph 4</h2>
+        <h2>V4 - We value both objective and subjective data collection along with research methods to identify, measure, and prioritize Technical Debt over single-method approaches.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Eget duis at tellus at urna condimentum mattis pellentesque id. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper.
+          Technical Debt items may take many different forms, therefore, identifying and measuring them requires incorporating multiple mono- or inter-disciplinary approaches (e.g., from economics or psychology), metrics, and benchmarks that might differ for each form of Technical Debt depending on the context. Relevant data may be of several different types, ranging from quantitative metrics to qualitative data (e.g., open-ended survey responses and interviews that capture opinions on the severity/priority of Technical Debt items or the probability of specific components changing in the future).
         </p>
         <div class="paragraph-actions">
           <button class="discuss-btn" type="button">Discuss paragraph #4</button>
@@ -60,9 +66,9 @@
       </section>
 
       <section class="paragraph" id="p5" data-paragraph="5">
-        <h2>Paragraph 5</h2>
+        <h2>V5 - We value software architecture understanding across the team as part of effective Technical Debt Management.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam viverra orci sagittis eu volutpat. Id consectetur purus ut faucibus. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
+          A precondition to understanding Technical Debt items, their consequences, and the effects of repaying them is understanding the current architecture and how it has evolved over time. The entire team (developers, managers and other stakeholders) should share such an understanding to enable them to align and check the conformance of the architecture implementation. This should also occur in parallel with maintaining code quality, and it often results in improving it. Teams should consider architecture understanding as an essential part of development competency as well as a means to reason about business value and technical tradeoffs.
         </p>
         <div class="paragraph-actions">
           <button class="discuss-btn" type="button">Discuss paragraph #5</button>
@@ -70,60 +76,6 @@
         <div class="comments-slot" aria-live="polite"></div>
       </section>
 
-      <section class="paragraph" id="p6" data-paragraph="6">
-        <h2>Paragraph 6</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Blandit cursus risus at ultrices. Turpis cursus in hac habitasse platea dictumst quisque sagittis.
-        </p>
-        <div class="paragraph-actions">
-          <button class="discuss-btn" type="button">Discuss paragraph #6</button>
-        </div>
-        <div class="comments-slot" aria-live="polite"></div>
-      </section>
-
-      <section class="paragraph" id="p7" data-paragraph="7">
-        <h2>Paragraph 7</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet purus gravida quis blandit turpis cursus in hac. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla.
-        </p>
-        <div class="paragraph-actions">
-          <button class="discuss-btn" type="button">Discuss paragraph #7</button>
-        </div>
-        <div class="comments-slot" aria-live="polite"></div>
-      </section>
-
-      <section class="paragraph" id="p8" data-paragraph="8">
-        <h2>Paragraph 8</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Morbi non arcu risus quis varius quam quisque id diam.
-        </p>
-        <div class="paragraph-actions">
-          <button class="discuss-btn" type="button">Discuss paragraph #8</button>
-        </div>
-        <div class="comments-slot" aria-live="polite"></div>
-      </section>
-
-      <section class="paragraph" id="p9" data-paragraph="9">
-        <h2>Paragraph 9</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper quis lectus nulla at volutpat diam ut venenatis. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. Morbi tristique senectus et netus et malesuada fames ac turpis.
-        </p>
-        <div class="paragraph-actions">
-          <button class="discuss-btn" type="button">Discuss paragraph #9</button>
-        </div>
-        <div class="comments-slot" aria-live="polite"></div>
-      </section>
-
-      <section class="paragraph" id="p10" data-paragraph="10">
-        <h2>Paragraph 10</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id donec ultrices tincidunt arcu non sodales neque. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Pellentesque sit amet porttitor eget dolor morbi non arcu risus.
-        </p>
-        <div class="paragraph-actions">
-          <button class="discuss-btn" type="button">Discuss paragraph #10</button>
-        </div>
-        <div class="comments-slot" aria-live="polite"></div>
-      </section>
     </main>
 
     <footer class="site-footer">

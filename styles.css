@@ -86,6 +86,34 @@ html, body {
   gap: 0.5rem;
 }
 
+.footnotes {
+  border-top: 1px solid #888; /* thin line */
+  margin-top: 2em;
+  padding-top: 0.5em;
+  font-size: 0.9em;
+}
+
+.footnotes li {
+  list-style: none; /* remove bullet */
+  margin-left: 0;
+}
+
+.footnotes li::marker {
+  content: none; /* ensure no default numbering */
+}
+
+.footnote-number {
+  vertical-align: super;
+  font-size: 0.7em;
+  margin-right: 0.3em;
+}
+
+.references {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.75em !important;
+}
+
 .discuss-btn, .close-comments-btn {
   appearance: none;
   border: 1px solid var(--button-border);
