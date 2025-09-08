@@ -2,6 +2,8 @@ Research Manifesto – Paragraph Comments
 
 Simple static site that presents a Research Manifesto and adds a per‑paragraph discussion powered by Utterances (GitHub Issues). Each paragraph has its own "Discuss" button that mounts an Utterances widget tied to a unique issue term.
 
+You can access the website [here](https://luizguerra.github.io/Public-Forum/).
+
 Contents
 - Overview
 - Features
