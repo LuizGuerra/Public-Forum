@@ -141,3 +141,41 @@ html, body {
   padding: 1rem;
 }
 .site-footer a { color: var(--accent); }
+
+/* Segmented control */
+.segmented-wrap {
+  display: flex;
+  justify-content: center;
+}
+.segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.segment {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.segment:is(.is-active, [aria-selected="true"]) {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--border) inset;
+}
+.segment:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.panels { margin-top: 0.5rem; }
+.panel[hidden] { display: none; }

@@ -93,5 +93,50 @@ function watchThemeChanges() {
 document.addEventListener('DOMContentLoaded', () => {
   setupDiscussButtons();
   watchThemeChanges();
+  setupSegmentedPanels();
 });
 
+// Segmented controls: toggle panels visible/hidden and manage ARIA state
+function setupSegmentedPanels() {
+  const tabs = Array.from(document.querySelectorAll('.segmented .segment'));
+  if (!tabs.length) return;
+  const panels = new Map(
+    tabs.map(t => [t.id, document.getElementById(t.getAttribute('aria-controls'))])
+  );
+
+  function activate(tab) {
+    tabs.forEach(btn => {
+      const selected = btn === tab;
+      btn.classList.toggle('is-active', selected);
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+      const panel = panels.get(btn.id);
+      if (panel) panel.hidden = !selected;
+    });
+  }
+
+  tabs.forEach((btn, idx) => {
+    btn.addEventListener('click', () => activate(btn));
+    btn.addEventListener('keydown', (e) => {
+      const k = e.key;
+      if (k === 'ArrowRight' || k === 'ArrowDown') {
+        e.preventDefault();
+        const next = tabs[(idx + 1) % tabs.length];
+        next.focus();
+        activate(next);
+      } else if (k === 'ArrowLeft' || k === 'ArrowUp') {
+        e.preventDefault();
+        const prev = tabs[(idx - 1 + tabs.length) % tabs.length];
+        prev.focus();
+        activate(prev);
+      } else if (k === 'Home') {
+        e.preventDefault();
+        tabs[0].focus();
+        activate(tabs[0]);
+      } else if (k === 'End') {
+        e.preventDefault();
+        tabs[tabs.length - 1].focus();
+        activate(tabs[tabs.length - 1]);
+      }
+    });
+  });
+}
