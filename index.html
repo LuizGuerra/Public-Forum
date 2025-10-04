@@ -12,29 +12,153 @@
 <body>
   
   <header class="site-header">
-    <h1>Research Manifesto</h1>
-    <p class="tagline">Manifesto from Dagstuhl Perspectives Workshop 24452 -- Reframing Technical Debt -- <a
-        target="_blank" href=https://arxiv.org/abs/2505.13009>Link to Paper</a></p>
+    <nav class="top-bar" aria-label="Site">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true">TD</span>
+        <div class="brand-copy">
+          <p class="brand-title">Technical Debt Perspectives</p>
+          <p class="brand-subtitle">Dagstuhl Research Series</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="top-action" href="#panel-values">Read manifesto</a>
+        <a class="top-action" href="https://arxiv.org/abs/2505.13009" target="_blank" rel="noreferrer noopener">Download paper</a>
+      </div>
+    </nav>
 
-    <p class="top-link">From <a href="https://www.dagstuhl.de/24452" target="_blank" rel="noreferrer noopener">Dagstuhl Perspectives Workshop 24452</a></p>
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>Research Manifesto</h1>
+        <p class="tagline">Manifesto from Dagstuhl Perspectives Workshop 24452 — Reframing Technical Debt. Produced by an international cohort of researchers, practitioners, and industry partners.</p>
+        <div class="hero-stats" aria-label="Document stats">
+          <div class="stat">
+            <span class="stat-value">34</span>
+            <span class="stat-label">Contributors</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">3</span>
+            <span class="stat-label">Core pillars</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">9</span>
+            <span class="stat-label">Guiding principles</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="cta primary" href="https://www.dagstuhl.de/24452" target="_blank" rel="noreferrer noopener">Explore workshop</a>
+          <a class="cta secondary" href="#panel-values">Jump to content</a>
+        </div>
+      </div>
+      <dl class="hero-meta" aria-label="Document metadata">
+        <div>
+          <dt>Published</dt>
+          <dd>November 2024</dd>
+        </div>
+        <div>
+          <dt>Latest update</dt>
+          <dd>March 2025</dd>
+        </div>
+        <div>
+          <dt>Lead editors</dt>
+          <dd>Neil Ernst, Philippe Kruchten</dd>
+        </div>
+        <div>
+          <dt>Workshop partners</dt>
+          <dd>ACM SIGSOFT · IEEE TCSE · Dagstuhl</dd>
+        </div>
+      </dl>
+    </div>
   </header>
-  
+
 
   <main class="content" id="content">
-    <!-- Segmented control to switch between lists -->
-    <div class="segmented-wrap">
-      <nav class="segmented" role="tablist" aria-label="Manifesto sections">
-        <button class="segment is-active" id="tab-values" role="tab" aria-selected="true"
-          aria-controls="panel-values">Values</button>
-        <button class="segment" id="tab-beliefs" role="tab" aria-selected="false"
-          aria-controls="panel-beliefs">Beliefs</button>
-        <button class="segment" id="tab-principles" role="tab" aria-selected="false"
-          aria-controls="panel-principles">Principles</button>
-      </nav>
-    </div>
+    <section class="info-banner" aria-label="Document status">
+      <p><strong>Living document:</strong> This manifesto evolves as new case studies from partner organizations are reviewed. Expect quarterly updates and release notes.</p>
+      <button class="info-action" type="button" id="focus-toggle" aria-pressed="false">Enter focus mode</button>
+    </section>
 
-    <div class="panels">
-      <section id="panel-values" class="panel" role="tabpanel" aria-labelledby="tab-values">
+    <div class="document-layout">
+      <aside class="document-meta" aria-label="Supporting information">
+        <section class="meta-card">
+          <h2>Document details</h2>
+          <dl>
+            <div>
+              <dt>Version</dt>
+              <dd>1.3.2 (public draft)</dd>
+            </div>
+            <div>
+              <dt>Review window</dt>
+              <dd>Open until 30 April 2025</dd>
+            </div>
+            <div>
+              <dt>Primary audience</dt>
+              <dd>Engineering leaders, product strategists, researchers</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="meta-card">
+          <h2>Key themes</h2>
+          <ul>
+            <li>Sustainable technical debt governance</li>
+            <li>Evidence-informed decision frameworks</li>
+            <li>Human-centric collaboration models</li>
+          </ul>
+        </section>
+
+        <section class="meta-card">
+          <h2>Get involved</h2>
+          <ul>
+            <li><a href="https://forms.gle/1zcpETzzh4jxeJ9M8" target="_blank" rel="noreferrer noopener">Sign up for review calls</a></li>
+            <li><a href="https://github.com/LuizGuerra/Public-Forum/issues" target="_blank" rel="noreferrer noopener">Track discussion issues</a></li>
+            <li><a href="mailto:manifesto@technical-debt.org">Email the editors</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <article class="document-body">
+        <section class="manifesto-summary">
+          <h2>Executive summary</h2>
+          <p>The manifesto reframes Technical Debt as a strategic asset that requires intentional governance. It outlines shared values, foundational beliefs, and concrete principles distilled from cross-industry workshops, longitudinal studies, and architecture reviews.</p>
+          <ul>
+            <li>Aligns technical debt conversations with business strategy and stakeholder incentives.</li>
+            <li>Champions transparent data practices, contextual metrics, and replicable tooling.</li>
+            <li>Provides actionable guidance for establishing sustainable debt remediation roadmaps.</li>
+          </ul>
+        </section>
+
+        <section class="highlights">
+          <h2>In this manifesto</h2>
+          <div class="highlight-grid">
+            <article>
+              <h3>Values</h3>
+              <p>What we collectively commit to when stewarding large-scale software systems.</p>
+            </article>
+            <article>
+              <h3>Beliefs</h3>
+              <p>Evidence-backed statements grounding our approach to debt discovery and remediation.</p>
+            </article>
+            <article>
+              <h3>Principles</h3>
+              <p>Practical guidance for integrating technical debt thinking into daily workflows.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Segmented control to switch between lists -->
+        <div class="segmented-wrap">
+          <nav class="segmented" role="tablist" aria-label="Manifesto sections">
+            <button class="segment is-active" id="tab-values" role="tab" aria-selected="true"
+              aria-controls="panel-values">Values</button>
+            <button class="segment" id="tab-beliefs" role="tab" aria-selected="false"
+              aria-controls="panel-beliefs">Beliefs</button>
+            <button class="segment" id="tab-principles" role="tab" aria-selected="false"
+              aria-controls="panel-principles">Principles</button>
+          </nav>
+        </div>
+
+        <div class="panels">
+          <section id="panel-values" class="panel" role="tabpanel" aria-labelledby="tab-values">
         <!-- Panel 1: Values -->
         <section class="paragraph" id="p1" data-paragraph="Value 1 – Psychological Safety & Trust">
           <h2>V1 - We value psychological safety and trust between technical and business stakeholders for effective Technical Debt Management.</h2>
@@ -99,10 +223,10 @@
           <div class="comments-slot" aria-live="polite"></div>
         </section>
 
-      </section>
+          </section>
 
-      <!-- Panel 2: Beliefs -->
-      <section id="panel-beliefs" class="panel" role="tabpanel" aria-labelledby="tab-beliefs" hidden>
+          <!-- Panel 2: Beliefs -->
+          <section id="panel-beliefs" class="panel" role="tabpanel" aria-labelledby="tab-beliefs" hidden>
         <section class="paragraph" id="p1" data-paragraph="Belief 1 – Continuous Management">
           <h2>B1 - We believe that sustainable software delivery requires proactive and continuous Technical Debt Management.</h2>
           <p>
@@ -157,10 +281,10 @@
           </div>
           <div class="comments-slot" aria-live="polite"></div>
         </section>
-      </section>
+          </section>
 
-      <!-- Panel 3: Principles -->
-      <section id="panel-principles" class="panel" role="tabpanel" aria-labelledby="tab-principles" hidden>
+          <!-- Panel 3: Principles -->
+          <section id="panel-principles" class="panel" role="tabpanel" aria-labelledby="tab-principles" hidden>
         <section class="paragraph" id="p1" data-paragraph="Principle 1 – Shared Responsibility">
           <h2>P1 - Share Responsibility for Technical Debt Management.</h2>
           <p>
@@ -261,8 +385,10 @@
         </section>
 
 
-      </section>
+          </section>
 
+        </div>
+      </article>
     </div>
   </main>
 

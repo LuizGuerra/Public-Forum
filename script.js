@@ -93,6 +93,7 @@ function watchThemeChanges() {
 document.addEventListener('DOMContentLoaded', () => {
   setupDiscussButtons();
   watchThemeChanges();
+  setupFocusModeToggle();
   setupSegmentedPanels();
 });
 
@@ -139,4 +140,23 @@ function setupSegmentedPanels() {
       }
     });
   });
+}
+
+function setupFocusModeToggle() {
+  const btn = document.getElementById('focus-toggle');
+  if (!btn) return;
+  const { body } = document;
+
+  const update = () => {
+    const active = body.classList.contains('focus-mode');
+    btn.textContent = active ? 'Exit focus mode' : 'Enter focus mode';
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  };
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('focus-mode');
+    update();
+  });
+
+  update();
 }
