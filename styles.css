@@ -250,43 +250,22 @@ html, body {
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1rem 1.25rem;
-  margin-top: -2.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
   color: var(--text);
+  box-shadow: var(--card-shadow);
 }
 
 .info-banner strong {
   color: var(--accent);
 }
 
-.info-action {
-  appearance: none;
-  border: 1px solid var(--button-border);
-  background: var(--button-bg);
-  color: var(--button-text);
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.info-action:hover {
-  border-color: var(--button-hover-border);
-}
-
-.document-layout {
+.meta-cards {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
-}
-
-.document-meta {
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
-  position: sticky;
-  top: 1.5rem;
-  height: max-content;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .meta-card {
@@ -512,24 +491,6 @@ html, body {
 .panels { margin-top: 0.5rem; }
 .panel[hidden] { display: none; }
 
-body.focus-mode .document-layout {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-body.focus-mode .document-meta {
-  display: none;
-}
-
-body.focus-mode .document-body {
-  max-width: 72ch;
-  margin: 0 auto;
-}
-
-body.focus-mode .manifesto-summary,
-body.focus-mode .highlight-grid article {
-  box-shadow: none;
-}
-
 @media (max-width: 960px) {
   .top-bar {
     flex-direction: column;
@@ -548,13 +509,5 @@ body.focus-mode .highlight-grid article {
   .info-banner {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .document-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .document-meta {
-    position: static;
   }
 }

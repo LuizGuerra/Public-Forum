@@ -74,91 +74,51 @@
   <main class="content" id="content">
     <section class="info-banner" aria-label="Document status">
       <p><strong>Living document:</strong> This manifesto evolves as new case studies from partner organizations are reviewed. Expect quarterly updates and release notes.</p>
-      <button class="info-action" type="button" id="focus-toggle" aria-pressed="false">Enter focus mode</button>
     </section>
 
-    <div class="document-layout">
-      <aside class="document-meta" aria-label="Supporting information">
-        <section class="meta-card">
-          <h2>Document details</h2>
-          <dl>
-            <div>
-              <dt>Version</dt>
-              <dd>1.3.2 (public draft)</dd>
-            </div>
-            <div>
-              <dt>Review window</dt>
-              <dd>Open until 30 April 2025</dd>
-            </div>
-            <div>
-              <dt>Primary audience</dt>
-              <dd>Engineering leaders, product strategists, researchers</dd>
-            </div>
-          </dl>
-        </section>
+    <article class="document-body">
+      <section class="manifesto-summary">
+        <h2>Executive summary</h2>
+        <p>The manifesto reframes Technical Debt as a strategic asset that requires intentional governance. It outlines shared values, foundational beliefs, and concrete principles distilled from cross-industry workshops, longitudinal studies, and architecture reviews.</p>
+        <ul>
+          <li>Aligns technical debt conversations with business strategy and stakeholder incentives.</li>
+          <li>Champions transparent data practices, contextual metrics, and replicable tooling.</li>
+          <li>Provides actionable guidance for establishing sustainable debt remediation roadmaps.</li>
+        </ul>
+      </section>
 
-        <section class="meta-card">
-          <h2>Key themes</h2>
-          <ul>
-            <li>Sustainable technical debt governance</li>
-            <li>Evidence-informed decision frameworks</li>
-            <li>Human-centric collaboration models</li>
-          </ul>
-        </section>
-
-        <section class="meta-card">
-          <h2>Get involved</h2>
-          <ul>
-            <li><a href="https://forms.gle/1zcpETzzh4jxeJ9M8" target="_blank" rel="noreferrer noopener">Sign up for review calls</a></li>
-            <li><a href="https://github.com/LuizGuerra/Public-Forum/issues" target="_blank" rel="noreferrer noopener">Track discussion issues</a></li>
-            <li><a href="mailto:manifesto@technical-debt.org">Email the editors</a></li>
-          </ul>
-        </section>
-      </aside>
-
-      <article class="document-body">
-        <section class="manifesto-summary">
-          <h2>Executive summary</h2>
-          <p>The manifesto reframes Technical Debt as a strategic asset that requires intentional governance. It outlines shared values, foundational beliefs, and concrete principles distilled from cross-industry workshops, longitudinal studies, and architecture reviews.</p>
-          <ul>
-            <li>Aligns technical debt conversations with business strategy and stakeholder incentives.</li>
-            <li>Champions transparent data practices, contextual metrics, and replicable tooling.</li>
-            <li>Provides actionable guidance for establishing sustainable debt remediation roadmaps.</li>
-          </ul>
-        </section>
-
-        <section class="highlights">
-          <h2>In this manifesto</h2>
-          <div class="highlight-grid">
-            <article>
-              <h3>Values</h3>
-              <p>What we collectively commit to when stewarding large-scale software systems.</p>
-            </article>
-            <article>
-              <h3>Beliefs</h3>
-              <p>Evidence-backed statements grounding our approach to debt discovery and remediation.</p>
-            </article>
-            <article>
-              <h3>Principles</h3>
-              <p>Practical guidance for integrating technical debt thinking into daily workflows.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- Segmented control to switch between lists -->
-        <div class="segmented-wrap">
-          <nav class="segmented" role="tablist" aria-label="Manifesto sections">
-            <button class="segment is-active" id="tab-values" role="tab" aria-selected="true"
-              aria-controls="panel-values">Values</button>
-            <button class="segment" id="tab-beliefs" role="tab" aria-selected="false"
-              aria-controls="panel-beliefs">Beliefs</button>
-            <button class="segment" id="tab-principles" role="tab" aria-selected="false"
-              aria-controls="panel-principles">Principles</button>
-          </nav>
+      <section class="highlights">
+        <h2>In this manifesto</h2>
+        <div class="highlight-grid">
+          <article>
+            <h3>Values</h3>
+            <p>What we collectively commit to when stewarding large-scale software systems.</p>
+          </article>
+          <article>
+            <h3>Beliefs</h3>
+            <p>Evidence-backed statements grounding our approach to debt discovery and remediation.</p>
+          </article>
+          <article>
+            <h3>Principles</h3>
+            <p>Practical guidance for integrating technical debt thinking into daily workflows.</p>
+          </article>
         </div>
+      </section>
 
-        <div class="panels">
-          <section id="panel-values" class="panel" role="tabpanel" aria-labelledby="tab-values">
+      <!-- Segmented control to switch between lists -->
+      <div class="segmented-wrap">
+        <nav class="segmented" role="tablist" aria-label="Manifesto sections">
+          <button class="segment is-active" id="tab-values" role="tab" aria-selected="true"
+            aria-controls="panel-values">Values</button>
+          <button class="segment" id="tab-beliefs" role="tab" aria-selected="false"
+            aria-controls="panel-beliefs">Beliefs</button>
+          <button class="segment" id="tab-principles" role="tab" aria-selected="false"
+            aria-controls="panel-principles">Principles</button>
+        </nav>
+      </div>
+
+      <div class="panels">
+        <section id="panel-values" class="panel" role="tabpanel" aria-labelledby="tab-values">
         <!-- Panel 1: Values -->
         <section class="paragraph" id="p1" data-paragraph="Value 1 – Psychological Safety & Trust">
           <h2>V1 - We value psychological safety and trust between technical and business stakeholders for effective Technical Debt Management.</h2>
@@ -166,7 +126,7 @@
             Psychological safety<span class="footnote-number">1</span> is essential for effective Technical Debt Management as it implies that there is no risk of retribution. Instead, people can talk openly about Technical Debt and how it was introduced without concern about negative career impact. Equally important is building trust between technical and business stakeholders: they both have legitimate concerns about the software being developed, and they need to mutually understand and respect these concerns by working together to address them. Accountability translates into appointing concrete roles to manage Technical Debt instead of blaming other stakeholders.
           </p>
           <p>
-            <span class="footnote-number">1</span> For a canonical reference of the term, please see following.
+            <span class="footnote-number">1</span> For a canonical reference of the term, please see:
           </p>
           <p class="references">
             Amy Edmondson. Psychological safety and learning behavior in work teams. <i>Administrative Science
@@ -193,7 +153,7 @@
         <section class="paragraph" id="p3" data-paragraph="Value 3 – Transparency & Explainability">
           <h2>V3 - We value transparency, explainability, and replicability in the identification, measurement, and prioritization of Technical Debt.</h2>
           <p>
-            The methods by which Technical Debt is identified, measured, and prioritized should not be obscured behind complicated tooling, esoteric rules, and undisclosed data sets. Instead, Technical Debt items should be traced to specific data sources, where measurement and prioritization rules should be open and explainable to all stakeholders
+            The methods by which Technical Debt is identified, measured, and prioritized should not be obscured behind complicated tooling, esoteric rules, and undisclosed data sets. Instead, Technical Debt items should be traced to specific data sources, where measurement and prioritization rules should be open and explainable to all stakeholders.
           </p>
           <div class="paragraph-actions">
             <button class="discuss-btn" type="button">Discuss Value #3</button>
@@ -319,7 +279,7 @@
         </section>
 
         <section class="paragraph" id="p4" data-paragraph="Principle 4 – Tailored Metrics">
-          <h2>P4 - Avoid a One-Size-Fits-All Technical Debt Metric</h2>
+          <h2>P4 - Avoid a One-Size-Fits-All Technical Debt Metric.</h2>
           <p>
             Individual stakeholders require different Technical Debt metrics. Teams should opt for a set of carefully thought-out metrics over single, narrowly scoped, non-actionable metrics. The set of metrics should be re-evaluated and revised periodically to maintain alignment with trending data and mitigate concept drift. Reusable metrics should be properly validated against benchmarks, and against developer perceptions, for stability over time, and for generalizability across organizations.
           </p>
@@ -365,7 +325,7 @@
         <section class="paragraph" id="p8" data-paragraph="Principle 8 – Purpose-Built Benchmarks">
           <h2>P8 - Develop Fit-for-Purpose Technical Debt Benchmarks.</h2>
           <p>
-            We consider that purpose-built Technical Debt benchmarks (i.e., standardized tests) are significantly distinct from classical static code analysis benchmarks. Such purpose-built Technical Debt benchmarks should not only focus on what can be easily extracted with current tools but also cover contextual factors as well as architectural concepts that are important for the identification and prioritization of Technical Debt. There is a benefit to defining different benchmarks for Technical Debt based on the purpose, such as governance, tool comparison, or application domains, the inclusion of diverse software artifacts, and a variety of development contexts. This will not only
+            We consider that purpose-built Technical Debt benchmarks (<i>i.e.</i>, standardized tests) are significantly distinct from classical static code analysis benchmarks. Such purpose-built Technical Debt benchmarks should not only focus on what can be easily extracted with current tools but also cover contextual factors as well as architectural concepts that are important for the identification and prioritization of Technical Debt. There is a benefit to defining different benchmarks for Technical Debt based on the purpose, such as governance, tool comparison, or application domains, the inclusion of diverse software artifacts, and a variety of development contexts. This will not only boost appropriate tool development, but it will also assist practitioners in adopting tools.
           </p>
           <div class="paragraph-actions">
             <button class="discuss-btn" type="button">Discuss Principle #8</button>
@@ -374,7 +334,7 @@
         </section>
 
         <section class="paragraph" id="p9" data-paragraph="Principle 9 – Intentional Tradeoffs">
-          <h2>P9 - Make Intentional Technical Debt Tradeoff Decisions.2</h2>
+          <h2>P9 - Make Intentional Technical Debt Tradeoff Decisions.</h2>
           <p>
             An effective Technical Debt Management approach bases the analysis of Technical Debt tradeoffs on data and transparent decision-making. All stakeholders must recognize that Technical Debt Management involves intentional compromise (e.g., prioritizing among features, defects, security vulnerabilities, and Technical Debt items). Especially at the moment that Technical Debt is incurred, the involved stakeholders should document the decision, the tradeoff and a remediation plan.
           </p>
@@ -386,10 +346,46 @@
 
 
           </section>
-
         </div>
+    </article>
+
+    <section class="meta-cards" aria-label="Supporting information">
+      <article class="meta-card">
+        <h2>Document details</h2>
+        <dl>
+          <div>
+            <dt>Version</dt>
+            <dd>0.3 (public draft)</dd>
+          </div>
+          <div>
+            <dt>Review window</dt>
+            <dd>Open until 30 April 2025</dd>
+          </div>
+          <div>
+            <dt>Primary audience</dt>
+            <dd>Engineering leaders, product strategists, researchers</dd>
+          </div>
+        </dl>
       </article>
-    </div>
+
+      <article class="meta-card">
+        <h2>Key themes</h2>
+        <ul>
+          <li>Sustainable technical debt governance</li>
+          <li>Evidence-informed decision frameworks</li>
+          <li>Human-centric collaboration models</li>
+        </ul>
+      </article>
+
+      <article class="meta-card">
+        <h2>Get involved</h2>
+        <ul>
+          <li><a href="https://forms.gle/1zcpETzzh4jxeJ9M8" target="_blank" rel="noreferrer noopener">Sign up for review calls</a></li>
+          <li><a href="https://github.com/LuizGuerra/Public-Forum/issues" target="_blank" rel="noreferrer noopener">Track discussion issues</a></li>
+          <li><a href="mailto:manifesto@technical-debt.org">Email the editors</a></li>
+        </ul>
+      </article>
+    </section>
   </main>
 
   <footer class="site-footer">
