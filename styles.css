@@ -48,6 +48,20 @@ html, body {
   padding: 2rem 1rem 1rem;
   text-align: center;
 }
+
+.top-link {
+  text-align: center;
+  padding: 1rem 1rem 0;
+  margin: 0;
+}
+.top-link a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.top-link a:hover {
+  text-decoration: underline;
+}
 .site-header h1 {
   margin: 0 0 0.25rem 0;
   font-weight: 700;
