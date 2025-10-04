@@ -142,6 +142,11 @@ html, body {
   max-width: 60ch;
 }
 
+.tagline a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
